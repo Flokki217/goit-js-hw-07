@@ -11,13 +11,13 @@ const imageArr = galleryItems
 galeryListEl.insertAdjacentHTML("beforeend", imageArr);
 
 galeryListEl.onclick = (evt) => {
-  if (evt.target.tagName !== "IMG") {
+  if (evt.target.nodeName !== "IMG") {
     return;
   }
   evt.preventDefault();
   const instance = basicLightbox.create(
     `
-		<img width="1400" height="900" src="${evt.target.dataset.source}">
+		<img width="1024" height="768" src="${evt.target.dataset.source}">
 	`,
     {
       onShow: () => {
